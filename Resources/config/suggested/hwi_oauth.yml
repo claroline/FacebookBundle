@@ -1,5 +1,6 @@
 hwi_oauth:
     # name of the firewall in which this bundle is active, this setting MUST be set
+    # These settings are overrided in Security/ResourceOwnerFactory. Don't waste your time editing them here. It won't work.
     firewall_name: main
     resource_owners:
         facebook:
@@ -25,7 +26,7 @@ security:
         main:
             oauth:
                 resource_owners:
-                    facebook: /login/check_facebook
+                    facebook: facebook/login/check_facebook
                 login_path: /login
                 failure_path: /login
                 use_forward: false
