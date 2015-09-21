@@ -54,8 +54,14 @@ class ResourceOwnerFactory
             array(
                 'client_id' => $this->configHandler->getParameter('facebook_client_id'),
                 'client_secret' => $this->configHandler->getParameter('facebook_client_secret'),
+                'infos_url' => "https://graph.facebook.com/me?fields=id,name,first_name,last_name,email",
                 'scope' => 'email',
-                'paths' => array(),
+                'paths' => array(
+                    'email' => 'email',
+                    'firstname' => 'first_name',
+                    'lastname' => 'last_name',
+                    'nickname' => 'name'
+                ),
                 'options' => array()
             ),
             'facebook',
